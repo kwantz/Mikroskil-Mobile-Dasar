@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MobileDasar</string>
+    <string name="title_activity_homepage">HomepageActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorit">Favorit</string>
+    <string name="title_keranjang">Keranjang</string>
+    <string name="title_transaksi">Transaksi</string>
+    <string name="title_akun">Akun</string>
 </resources>
