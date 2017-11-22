@@ -10,11 +10,16 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.kwantz.mobiledasar.Fragment.AkunFragment;
+import com.example.kwantz.mobiledasar.Fragment.FavoritFragment;
+import com.example.kwantz.mobiledasar.Fragment.HomeFragment;
+import com.example.kwantz.mobiledasar.Fragment.KeranjangFragment;
+import com.example.kwantz.mobiledasar.Fragment.TransaksiFragment;
+
 import java.lang.reflect.Field;
 
 public class HomepageActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
     private BottomNavigationView navigation;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -22,19 +27,19 @@ public class HomepageActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new HomeFragment()).commit();
                     return true;
                 case R.id.navigation_favorit:
-                    mTextMessage.setText(R.string.title_favorit);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new FavoritFragment()).commit();
                     return true;
                 case R.id.navigation_keranjang:
-                    mTextMessage.setText(R.string.title_keranjang);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new KeranjangFragment()).commit();
                     return true;
                 case R.id.navigation_transaksi:
-                    mTextMessage.setText(R.string.title_transaksi);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new TransaksiFragment()).commit();
                     return true;
                 case R.id.navigation_akun:
-                    mTextMessage.setText(R.string.title_akun);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new AkunFragment()).commit();
                     return true;
             }
             return false;
@@ -76,12 +81,14 @@ public class HomepageActivity extends AppCompatActivity {
 
         initializationVariable();
         initializationEvent();
+
+        // Jalankan Fragement untuk pertama kali dibuka (kalau nggk, nnt jdi kosong)
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, new HomeFragment()).commit();
     }
 
     private void initializationVariable () {
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
     }
 
     private void initializationEvent () {
