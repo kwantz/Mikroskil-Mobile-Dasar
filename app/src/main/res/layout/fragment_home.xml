@@ -5,7 +5,7 @@
     android:orientation="vertical"
     tools:context="com.example.kwantz.mobiledasar.Fragment.HomeFragment">
     <LinearLayout
-        android:padding="10dp"
+        android:padding="3dp"
         android:gravity="center"
         android:background="@color/blPink"
         android:orientation="horizontal"
@@ -13,29 +13,35 @@
         android:layout_height="wrap_content">
         <LinearLayout
             android:background="@color/white"
-            android:layout_margin="5dp"
-            android:layout_width="250dp"
-            android:layout_height="30dp">
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp">
             <ImageView
                 android:layout_margin="5dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/icon5"/>
             <ImageView
-                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
                 android:src="@drawable/logo"/>
         </LinearLayout>
         <ImageView
-            android:layout_margin="10dp"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:id="@+id/btn.chat"
+            android:clickable="true"
+            android:background="@drawable/round_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
             android:src="@drawable/icon7"/>
         <ImageView
-            android:layout_margin="10dp"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:id="@+id/btn.notif"
+            android:clickable="true"
+            android:background="@drawable/round_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
             android:src="@drawable/icon6"/>
     </LinearLayout>
     <TextView
