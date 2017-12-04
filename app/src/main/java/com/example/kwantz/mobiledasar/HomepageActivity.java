@@ -8,8 +8,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.GridView;
 import android.widget.TextView;
 
+import com.example.kwantz.mobiledasar.Adapter.HomepageGridAdapter;
 import com.example.kwantz.mobiledasar.Fragment.AkunFragment;
 import com.example.kwantz.mobiledasar.Fragment.FavoritFragment;
 import com.example.kwantz.mobiledasar.Fragment.HomeFragment;
@@ -21,6 +23,7 @@ import java.lang.reflect.Field;
 public class HomepageActivity extends AppCompatActivity {
 
     private BottomNavigationView navigation;
+    private GridView gridView;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -88,7 +91,6 @@ public class HomepageActivity extends AppCompatActivity {
 
     private void initializationVariable () {
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
-
     }
 
     private void initializationEvent () {
