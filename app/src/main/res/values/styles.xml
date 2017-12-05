@@ -11,4 +11,9 @@
     <style name="SplashTheme" parent="AppTheme">
         <item name="colorPrimaryDark">@color/white</item>
     </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#D3D3D3</item>
+        <item name="colorControlActivated">#FF0</item>
+    </style>
 </resources>
