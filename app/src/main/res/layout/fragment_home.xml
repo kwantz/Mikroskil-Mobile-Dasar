@@ -44,532 +44,897 @@
             android:padding="10dp"
             android:src="@drawable/icon6"/>
     </LinearLayout>
+
     <ScrollView
-        android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:clickable="true"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:padding="10dp"
-                        android:src="@drawable/icon8"/>
-                    <TextView
-                        android:textColor="@android:color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rp0"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_margin="10dp"
-                        android:background="@android:color/darker_gray"
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent" />
-                    <Button
-                        android:background="@android:color/transparent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TOP UP"/>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="160dp"
-                    android:src="@drawable/promo1"/>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:clickable="true"
+                        android:padding="10dp"
+                        android:src="@drawable/icon8" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp0"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="TOP UP" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"
+                    android:src="@drawable/promo1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:weightSum="1">
+
                 <LinearLayout
-                    android:gravity="center"
-                    android:layout_weight=".25"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
-                            android:padding="10dp"
-                            android:layout_weight=".25"
-                            android:src="@drawable/icon9"/>
-                        <TextView
-                            android:gravity="center"
-                            android:textSize="12dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="BUKALAPAK\nCREDITS"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".25">
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
                         <ImageView
                             android:layout_width="45dp"
                             android:layout_height="45dp"
-                            android:padding="10dp"
                             android:layout_weight=".25"
-                            android:src="@drawable/icon14"/>
+                            android:padding="10dp"
+                            android:src="@drawable/icon9" />
+
                         <TextView
-                            android:gravity="center"
-                            android:textSize="12dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="KERETA"/>
+                            android:gravity="center"
+                            android:text="BUKALAPAK\nCREDITS"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight=".25"
+                            android:padding="10dp"
+                            android:src="@drawable/icon14" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="KERETA"
+                            android:textSize="12dp" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
-                    android:gravity="center"
-                    android:layout_weight=".25"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
-                            android:padding="10dp"
-                            android:layout_weight=".25"
-                            android:src="@drawable/icon10"/>
-                        <TextView
-                            android:gravity="center"
-                            android:textSize="12dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="PULSA\n"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".25">
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
                         <ImageView
                             android:layout_width="45dp"
                             android:layout_height="45dp"
-                            android:padding="10dp"
                             android:layout_weight=".25"
-                            android:src="@drawable/icon13"/>
+                            android:padding="10dp"
+                            android:src="@drawable/icon10" />
+
                         <TextView
-                            android:gravity="center"
-                            android:textSize="12dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="PESAWAT"/>
+                            android:gravity="center"
+                            android:text="PULSA\n"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight=".25"
+                            android:padding="10dp"
+                            android:src="@drawable/icon13" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="PESAWAT"
+                            android:textSize="12dp" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
-                    android:gravity="center"
-                    android:layout_weight=".25"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
-                            android:padding="10dp"
-                            android:layout_weight=".25"
-                            android:src="@drawable/icon12"/>
-                        <TextView
-                            android:gravity="center"
-                            android:textSize="12dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="PAKET DATA\n"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".25">
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
                         <ImageView
                             android:layout_width="45dp"
                             android:layout_height="45dp"
-                            android:padding="10dp"
                             android:layout_weight=".25"
-                            android:src="@drawable/icon16"/>
+                            android:padding="10dp"
+                            android:src="@drawable/icon12" />
+
                         <TextView
-                            android:gravity="center"
-                            android:textSize="12dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="BUKAEMAS"/>
+                            android:gravity="center"
+                            android:text="PAKET DATA\n"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight=".25"
+                            android:padding="10dp"
+                            android:src="@drawable/icon16" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="BUKAEMAS"
+                            android:textSize="12dp" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
-                    android:gravity="center"
-                    android:layout_weight=".25"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <LinearLayout
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
-                            android:padding="10dp"
-                            android:layout_weight=".25"
-                            android:src="@drawable/icon11"/>
-                        <TextView
-                            android:gravity="center"
-                            android:textSize="12dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="LISTRIK\n"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".25">
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
                         <ImageView
                             android:layout_width="45dp"
                             android:layout_height="45dp"
-                            android:padding="10dp"
                             android:layout_weight=".25"
-                            android:src="@drawable/icon10"/>
+                            android:padding="10dp"
+                            android:src="@drawable/icon11" />
+
                         <TextView
-                            android:gravity="center"
-                            android:textSize="12dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ZAKAT\nPROFESI"/>
+                            android:gravity="center"
+                            android:text="LISTRIK\n"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight=".25"
+                            android:padding="10dp"
+                            android:src="@drawable/icon10" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="ZAKAT\nPROFESI"
+                            android:textSize="12dp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:gravity="center"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@android:color/darker_gray"/>
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/darker_gray" />
+
                 <LinearLayout
-                    android:padding="10dp"
-                    android:background="@drawable/border_background"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_background"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
                         <ImageView
-                            android:layout_marginRight="10dp"
                             android:layout_width="45dp"
                             android:layout_height="45dp"
+                            android:layout_marginRight="10dp"
                             android:padding="10dp"
-                            android:src="@drawable/icon15"/>
+                            android:src="@drawable/icon15" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ajak teman dan dapatkan Credits\nhingga Rp100.000"/>
+                            android:text="Ajak teman dan dapatkan Credits\nhingga Rp100.000" />
                     </LinearLayout>
+
                     <TextView
-                        android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@android:color/darker_gray"/>
+                        android:layout_margin="5dp"
+                        android:background="@android:color/darker_gray" />
+
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
                         <TextView
-                            android:textColor="@color/blPink"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Lihat selengkapnya"/>
+                            android:text="Lihat selengkapnya"
+                            android:textColor="@color/blPink" />
+
                         <TextView
-                            android:gravity="right"
-                            android:textColor="@color/blPink"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text=">"/>
+                            android:gravity="right"
+                            android:text=">"
+                            android:textColor="@color/blPink" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
-                android:padding="16dp"
-                android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp">
+
                 <TextView
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Promo Hari Ini"/>
-                <TextView
-                    android:gravity="right"
+                    android:text="Promo Hari Ini"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lihat Semua >"/>
+                    android:gravity="right"
+                    android:text="Lihat Semua >"
+                    android:textSize="15dp" />
             </LinearLayout>
+
             <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:paddingRight="16dp">
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:padding="16dp"
-                        android:orientation="vertical"
                         android:layout_width="200dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <ImageView
                             android:layout_width="184dp"
                             android:layout_height="184dp"
-                            android:src="@drawable/diskon1"/>
+                            android:src="@drawable/diskon1" />
+
                         <TextView
-                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Diskon Desember Fashion Pria Terkini"/>
+                            android:layout_marginTop="10dp"
+                            android:text="Diskon Desember Fashion Pria Terkini" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="184dp"
+                            android:layout_height="184dp"
+                            android:src="@drawable/diskon2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Promo Desember Perlengkapan Berkendara" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="184dp"
+                            android:layout_height="184dp"
+                            android:src="@drawable/diskon3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Gaya Keren Untuk Muslimah Modern" />
                     </LinearLayout>
                     <LinearLayout
-                        android:padding="16dp"
-                        android:orientation="vertical"
                         android:layout_width="200dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <ImageView
                             android:layout_width="184dp"
                             android:layout_height="184dp"
-                            android:src="@drawable/diskon2"/>
+                            android:src="@drawable/diskon4" />
+
                         <TextView
-                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Promo Desember Perlengkapan Berkendara"/>
+                            android:layout_marginTop="10dp"
+                            android:text="Desember Hot Promo Produk Elektronik Cicilan" />
                     </LinearLayout>
                     <LinearLayout
-                        android:padding="16dp"
-                        android:orientation="vertical"
                         android:layout_width="200dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
                         <ImageView
                             android:layout_width="184dp"
                             android:layout_height="184dp"
-                            android:src="@drawable/diskon3"/>
+                            android:src="@drawable/diskon5" />
+
                         <TextView
-                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Gaya Keren Untuk Muslimah Modern"/>
+                            android:layout_marginTop="10dp"
+                            android:text="Tas Feminin dengan Biaya Minim" />
                     </LinearLayout>
                 </LinearLayout>
             </HorizontalScrollView>
+
             <LinearLayout
-                android:padding="16dp"
-                android:gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp">
+
                 <TextView
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Brand Resmi"/>
-                <TextView
-                    android:gravity="right"
+                    android:text="Brand Resmi"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lihat Semua >"/>
+                    android:gravity="right"
+                    android:text="Lihat Semua >"
+                    android:textSize="15dp" />
             </LinearLayout>
+
             <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:paddingRight="16dp">
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
                     <ImageView
-                        android:layout_margin="16dp"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand1"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand1" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand2"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand2" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand3"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand3" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand4"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand4" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand5"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand5" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand6"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand6" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand7"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand7" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand8"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand8" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand9"/>
-                    <ImageView
                         android:layout_margin="16dp"
+                        android:src="@drawable/brand9" />
+
+                    <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:src="@drawable/brand10"/>
+                        android:layout_margin="16dp"
+                        android:src="@drawable/brand10" />
                 </LinearLayout>
             </HorizontalScrollView>
+
             <LinearLayout
-                android:padding="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
                 <TextView
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rekomendasi Buat Kamu"/>
+                    android:text="Rekomendasi Buat Kamu"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
             </LinearLayout>
+
             <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:paddingRight="16dp">
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:layout_margin="16dp"
-                        android:orientation="vertical"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="150dp"
-                            android:src="@drawable/produk1"/>
+                            android:src="@drawable/produk1" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Digital Alliance G D4 Plus  EVO 7 with 2TB HDD  Black"/>
+                            android:text="Digital Alliance G D4 Plus  EVO 7 with 2TB HDD  Black" />
+
                         <TextView
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rp6.599.000"/>
+                            android:text="Rp6.599.000" />
+
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
                             <RatingBar
-                                android:id="@+id/rating"
+                                style="?android:attr/ratingBarStyleSmall"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                style="?android:attr/ratingBarStyleSmall"
-                                android:numStars="5"
-                                android:stepSize="0.1"
                                 android:isIndicator="true"
-                                android:rating="3"
-                                android:theme="@style/RatingBar"/>
+                                android:numStars="5"
+                                android:progressTint="#FF0"
+                                android:rating="4.5"
+                                android:secondaryProgressTint="@android:color/transparent"
+                                android:stepSize="0.1" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3"/>
+                                android:layout_marginLeft="10dp"
+                                android:text="3" />
                         </LinearLayout>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/produk2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sandal karet wanita flat shoes | sepatu sendal cewek" />
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp55.000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RatingBar
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="#FF0"
+                                android:rating="4"
+                                android:secondaryProgressTint="@android:color/transparent"
+                                android:stepSize="0.1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="74" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/produk3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PS3 FAT HARDISK 80GB FREE REQUEST GAME" />
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp1.300.000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RatingBar
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="#FF0"
+                                android:rating="4.5"
+                                android:secondaryProgressTint="@android:color/transparent"
+                                android:stepSize="0.1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="26" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/produk4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ASUS ZENFONE 2 ZE550ML -RAM 2GB ROM 16GB -GARANSI RESMI " />
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp1.314.000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RatingBar
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="#FF0"
+                                android:rating="4"
+                                android:secondaryProgressTint="@android:color/transparent"
+                                android:stepSize="0.1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="37" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/produk5" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PROMO BASIC PENCIL SKIRT RK105" />
+
+                        <TextView
+                            android:background="@drawable/strikethrough"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp65.000" />
+
+                        <TextView
+                            android:textColor="@color/blPink"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp55.300" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RatingBar
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="#FF0"
+                                android:rating="5"
+                                android:secondaryProgressTint="@android:color/transparent"
+                                android:stepSize="0.1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="2" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/produk6" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Celana Jeans Fashion Wanita HIGHWAIST Sobek code 9840" />
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp140.000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RatingBar
+                                android:id="@+id/rating"
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressTint="#FF0"
+                                android:rating="4"
+                                android:secondaryProgressTint="@android:color/transparent"
+                                android:stepSize="0.1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
