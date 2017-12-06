@@ -803,7 +803,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ASUS ZENFONE 2 ZE550ML -RAM 2GB ROM 16GB -GARANSI RESMI " />
+                            android:text="ASUS ZENFONE 2 ZE550ML -RAM 2GB ROM 16GB -GARANSI RESMI" />
 
                         <TextView
                             android:textStyle="bold"

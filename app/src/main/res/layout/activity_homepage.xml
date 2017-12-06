@@ -15,6 +15,7 @@
         android:layout_weight="1"/>
 
     <android.support.design.widget.BottomNavigationView
+        android:windowSoftInputMode="adjustPan"
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
