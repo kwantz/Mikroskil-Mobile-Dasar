@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
+            android:id="@+id/search"
             android:background="@color/white"
             android:layout_width="230dp"
             android:layout_height="30dp"
@@ -897,7 +898,7 @@
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="150dp"
-                            android:src="@drawable/produk6" />
+                            android:src="@drawable/produk7" />
 
                         <TextView
                             android:layout_width="wrap_content"

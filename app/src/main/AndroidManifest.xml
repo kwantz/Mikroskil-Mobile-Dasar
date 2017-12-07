@@ -20,7 +20,9 @@
         </activity>
         <activity
             android:name=".HomepageActivity"
-            android:label="@string/title_activity_homepage"></activity>
+            android:label="@string/title_activity_homepage" />
+        <activity android:name=".SearchActivity"
+            android:windowSoftInputMode="stateVisible"></activity>
     </application>
 
 </manifest>

@@ -1,8 +1,5 @@
 package com.example.kwantz.mobiledasar.Fragment;
 
-import android.content.Context;
-import android.icu.text.DateFormat;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,9 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kwantz.mobiledasar.R;
-import com.example.kwantz.mobiledasar.Transaksi.PembelianFragment;
-import com.example.kwantz.mobiledasar.Transaksi.PenjualanFragment;
-import com.example.kwantz.mobiledasar.Transaksi.TagihanFragment;
+import com.example.kwantz.mobiledasar.Transaksi.Fragment.PembelianFragment;
+import com.example.kwantz.mobiledasar.Transaksi.Fragment.PenjualanFragment;
+import com.example.kwantz.mobiledasar.Transaksi.Fragment.TagihanFragment;
 import com.example.kwantz.mobiledasar.Transaksi.TransaksiPagerAdapter;
 
 public class TransaksiFragment extends Fragment {

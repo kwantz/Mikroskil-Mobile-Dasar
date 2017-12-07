@@ -1,4 +1,4 @@
-package com.example.kwantz.mobiledasar.Transaksi;
+package com.example.kwantz.mobiledasar.Transaksi.Adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,19 +25,31 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ViewHold
         ListBarang lb = new ListBarang();
 
         for (Barang barang : lb.getListBarang()) {
-            if (step % 3 == 0 && (this.status.equals("SEMUA") || this.status.equals("DIBAYAR"))) {
+            if (isSemuaBarangAtauBarangSudahDibayar(step)) {
                 this.listBarang.add(new TransaksiBarang(barang, "DIBAYAR"));
             }
-            else if (step % 3 == 1 && (this.status.equals("SEMUA") || this.status.equals("MENUNGGU"))) {
+            else if (isSemuaBarangAtauBarangPending(step)) {
                 this.listBarang.add(new TransaksiBarang(barang, "MENUNGGU"));
             }
-            else if (step % 3 == 2 && this.status.equals("SEMUA")){
+            else if (isSemuaBarang(step)){
                 this.listBarang.add(new TransaksiBarang(barang, "KEDALUWARSA"));
             }
 
             step++;
-            if (step > 5) break;
+            if (step == 4) break;
         }
+    }
+
+    private Boolean isSemuaBarangAtauBarangSudahDibayar (int idBarang) {
+        return (idBarang % 3 == 0) && (this.status.equals("SEMUA") || this.status.equals("DIBAYAR"));
+    }
+
+    private Boolean isSemuaBarangAtauBarangPending (int idBarang) {
+        return (idBarang % 3 == 1) && (this.status.equals("SEMUA") || this.status.equals("MENUNGGU"));
+    }
+
+    private Boolean isSemuaBarang (int idBarang) {
+        return (idBarang % 3 == 2) && this.status.equals("SEMUA");
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -57,7 +69,6 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ViewHold
     @Override
     public TagihanAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycleview_tagihan, parent, false);
-
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -68,14 +79,14 @@ public class TagihanAdapter extends RecyclerView.Adapter<TagihanAdapter.ViewHold
 
         holder.icon.setImageResource(transaksi.getBarang().getIcon());
         holder.title.setText(transaksi.getBarang().getTitle());
+        holder.status.setText(transaksi.getStatus());
 
-        if (transaksi.getBarang().getHargaDiskon().equals("")) {
+        if (transaksi.getBarang().isHargaNormal()) {
             holder.harga.setText(transaksi.getBarang().getHargaAsli());
-        } else {
+        }
+        else {
             holder.harga.setText(transaksi.getBarang().getHargaDiskon());
         }
-
-        holder.status.setText(transaksi.getStatus());
     }
 
     @Override

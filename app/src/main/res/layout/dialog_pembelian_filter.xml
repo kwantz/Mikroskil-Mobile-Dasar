@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:id="@+id/radio_grup">
+
+    <RadioButton android:id="@+id/radio1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Semua"
+        android:layout_margin="5dp"/>
+
+    <RadioButton android:id="@+id/radio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menunggu"
+        android:layout_margin="5dp"/>
+
+    <RadioButton android:id="@+id/radio3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dibayar"
+        android:layout_margin="5dp"/>
+
+    <RadioButton android:id="@+id/radio4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dikirim"
+        android:layout_margin="5dp"/>
+
+    <RadioButton android:id="@+id/radio5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diterima"
+        android:layout_margin="5dp"/>
+
+    <RadioButton android:id="@+id/radio6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selesai"
+        android:layout_margin="5dp"/>
+
+    <RadioButton android:id="@+id/radio7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dikembalikan"
+        android:layout_margin="5dp"/>
+</RadioGroup>

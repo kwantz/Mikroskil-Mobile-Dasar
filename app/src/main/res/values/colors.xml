@@ -6,4 +6,6 @@
     <color name="blPink">#d71149</color>
     <color name="blHover">#c30f42</color>
     <color name="white">#fff</color>
+    <color name="finish">#87d25f</color>
+    <color name="pending">#ccc</color>
 </resources>

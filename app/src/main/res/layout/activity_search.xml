@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.example.kwantz.mobiledasar.SearchActivity">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="#eee"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/back_btn"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_black_24dp"/>
+        <EditText
+            android:id="@+id/search_input"
+            android:background="#eee"
+            android:maxLines="1"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RIWAYAT KATA KUNCI"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eee"/>
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RIWAYAT BARANG"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eee"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PENCARIAN POPULER"/>
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pet Bed"/>
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Laptop 13 inch"/>
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lightsaber"/>
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sony PS 4"/>
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Boots Hujan Anak"/>
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mesin Cuci Front Loading"/>
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hiasan Natal"/>
+    </LinearLayout>
+
+</LinearLayout>

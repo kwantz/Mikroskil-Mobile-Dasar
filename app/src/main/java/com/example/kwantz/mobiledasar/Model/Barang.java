@@ -8,8 +8,9 @@ public class Barang {
     private String hargaDiskon;
     private String rate;
     private String feed;
+    private Boolean seen;
 
-    public Barang (int icon, String title, String deskripsi, String hargaAsli, String hargaDiskon, String rate, String feed) {
+    public Barang (int icon, String title, String deskripsi, String hargaAsli, String hargaDiskon, String rate, String feed, Boolean seen) {
         this.icon = icon;
         this.title = title;
         this.deskripsi = deskripsi;
@@ -17,6 +18,11 @@ public class Barang {
         this.hargaDiskon = hargaDiskon;
         this.rate = rate;
         this.feed = feed;
+        this.seen = seen;
+    }
+
+    public void setSeen (Boolean seen) {
+        this.seen = seen;
     }
 
     public int getIcon () {
@@ -46,4 +52,10 @@ public class Barang {
     public String getFeed () {
         return this.feed;
     }
+
+    public Boolean isHargaNormal () { return this.hargaDiskon.equals(""); }
+
+    public Boolean isSeen() { return this.seen; }
+
+    public Boolean isSameTitle (String title) { return this.title.equals(title); }
 }
