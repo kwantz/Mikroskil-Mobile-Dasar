@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
+            android:id="@+id/search"
             android:background="@color/white"
             android:layout_width="230dp"
             android:layout_height="30dp"
@@ -89,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
                 <LinearLayout
+                    android:id="@+id/barang1"
                     android:layout_weight=".5"
                     android:orientation="vertical"
                     android:layout_width="0dip"
@@ -155,6 +157,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/barang5"
                     android:layout_weight=".5"
                     android:orientation="vertical"
                     android:layout_width="0dip"

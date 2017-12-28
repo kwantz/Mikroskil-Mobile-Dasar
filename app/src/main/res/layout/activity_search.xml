@@ -28,6 +28,7 @@
             android:id="@+id/search_input"
             android:background="#eee"
             android:maxLines="1"
+            android:imeOptions="actionSearch"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:padding="5dp"
@@ -47,6 +49,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RIWAYAT KATA KUNCI"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/kata_kunci"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <View
@@ -58,6 +65,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:padding="5dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -67,6 +75,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RIWAYAT BARANG"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/riwayat_barang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <View
@@ -89,6 +101,7 @@
             android:layout_height="wrap_content"
             android:text="PENCARIAN POPULER"/>
         <TextView
+            android:id="@+id/cari1"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="#000"
@@ -96,6 +109,7 @@
             android:layout_height="wrap_content"
             android:text="Pet Bed"/>
         <TextView
+            android:id="@+id/cari2"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="#000"
@@ -103,6 +117,7 @@
             android:layout_height="wrap_content"
             android:text="Laptop 13 inch"/>
         <TextView
+            android:id="@+id/cari3"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="#000"
@@ -110,6 +125,7 @@
             android:layout_height="wrap_content"
             android:text="Lightsaber"/>
         <TextView
+            android:id="@+id/cari4"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="#000"
@@ -117,6 +133,7 @@
             android:layout_height="wrap_content"
             android:text="Sony PS 4"/>
         <TextView
+            android:id="@+id/cari5"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="#000"
@@ -124,6 +141,7 @@
             android:layout_height="wrap_content"
             android:text="Boots Hujan Anak"/>
         <TextView
+            android:id="@+id/cari6"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="#000"
@@ -131,6 +149,7 @@
             android:layout_height="wrap_content"
             android:text="Mesin Cuci Front Loading"/>
         <TextView
+            android:id="@+id/cari7"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:textColor="#000"

@@ -11,17 +11,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.kwantz.mobiledasar.Model.Barang;
+import com.example.kwantz.mobiledasar.Model.ListBarang;
+import com.example.kwantz.mobiledasar.Model.TransaksiBarang;
 import com.example.kwantz.mobiledasar.R;
 import com.example.kwantz.mobiledasar.Transaksi.Adapter.TagihanAdapter;
 
+import java.util.ArrayList;
+
 public class TagihanFragment extends Fragment {
+    private ArrayList<TransaksiBarang> listBarang = new ArrayList<>();
+    private String status;
     private View view;
     private Button filter;
     private ProgressBar progressBar;
+    private ImageView konten;
+    private LinearLayout notFound;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -43,10 +54,45 @@ public class TagihanFragment extends Fragment {
         return view;
     }
 
+    private Boolean isSemuaBarangAtauBarangSudahDibayar (int idBarang) {
+        return (idBarang % 3 == 0) && (this.status.equals("SEMUA") || this.status.equals("DIBAYAR"));
+    }
+
+    private Boolean isSemuaBarangAtauBarangPending (int idBarang) {
+        return (idBarang % 3 == 1) && (this.status.equals("SEMUA") || this.status.equals("MENUNGGU"));
+    }
+
+    private Boolean isSemuaBarang (int idBarang) {
+        return (idBarang % 3 == 2) && this.status.equals("SEMUA");
+    }
+
+    private void initListBarang (String status) {
+        int step = 1;
+        this.status = status;
+        this.listBarang = new ArrayList<>();
+
+        for (Barang barang : ListBarang.listBarang) {
+            if (isSemuaBarangAtauBarangSudahDibayar(step)) {
+                this.listBarang.add(new TransaksiBarang(barang, "DIBAYAR"));
+            }
+            else if (isSemuaBarangAtauBarangPending(step)) {
+                this.listBarang.add(new TransaksiBarang(barang, "MENUNGGU"));
+            }
+            else if (isSemuaBarang(step)){
+                this.listBarang.add(new TransaksiBarang(barang, "KEDALUWARSA"));
+            }
+
+            step++;
+            if (step == 4) break;
+        }
+    }
+
     private void initializationView () {
-        filter = (Button) view.findViewById(R.id.filter);
-        progressBar = (ProgressBar) view.findViewById(R.id.progress);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.tagihan_rv);
+        filter = view.findViewById(R.id.filter);
+        progressBar = view.findViewById(R.id.progress);
+        mRecyclerView = view.findViewById(R.id.tagihan_rv);
+        konten = view.findViewById(R.id.konten);
+        notFound = view.findViewById(R.id.not_found);
     }
 
     private void initializationProgressBar () {
@@ -57,7 +103,8 @@ public class TagihanFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(this.getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new TagihanAdapter("SEMUA");
+        initListBarang("SEMUA");
+        mAdapter = new TagihanAdapter(this.listBarang);
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -86,9 +133,12 @@ public class TagihanFragment extends Fragment {
     }
 
     private void runProgressBar (RadioButton radioButton) {
-        mAdapter = new TagihanAdapter("");
+        initListBarang("");
+        mAdapter = new TagihanAdapter(this.listBarang);
         mRecyclerView.setAdapter(mAdapter);
 
+        konten.setVisibility(View.GONE);
+        notFound.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
 
         final Handler handler = new Handler();
@@ -99,23 +149,26 @@ public class TagihanFragment extends Fragment {
             public void run() {
                 setFilterButtonText(radio);
                 progressBar.setVisibility(View.GONE);
+                if(listBarang.size() != 0)
+                    konten.setVisibility(View.VISIBLE);
+                else
+                    notFound.setVisibility(View.VISIBLE);
             }
         }, 1000);
     }
 
     private void setFilterButtonText (RadioButton radio) {
         if (radio.getText().equals("Semua")) {
-            mAdapter = new TagihanAdapter("SEMUA");
-            mRecyclerView.setAdapter(mAdapter);
+            initListBarang("SEMUA");
             filter.setText("SEMUA");
         } else if (radio.getText().equals("Dibayar")) {
-            mAdapter = new TagihanAdapter("DIBAYAR");
-            mRecyclerView.setAdapter(mAdapter);
+            initListBarang("DIBAYAR");
             filter.setText("DIBAYAR");
         } else if (radio.getText().equals("Menunggu Konfirmasi") ) {
-            mAdapter = new TagihanAdapter("MENUNGGU");
-            mRecyclerView.setAdapter(mAdapter);
+            initListBarang("MENUNGGU");
             filter.setText("MENUNGGU");
         }
+        mAdapter = new TagihanAdapter(this.listBarang);
+        mRecyclerView.setAdapter(mAdapter);
     }
 }

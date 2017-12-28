@@ -17,6 +17,7 @@ import com.example.kwantz.mobiledasar.Fragment.FavoritFragment;
 import com.example.kwantz.mobiledasar.Fragment.HomeFragment;
 import com.example.kwantz.mobiledasar.Fragment.KeranjangFragment;
 import com.example.kwantz.mobiledasar.Fragment.TransaksiFragment;
+import com.example.kwantz.mobiledasar.Model.ListBarang;
 
 import java.lang.reflect.Field;
 
@@ -81,6 +82,8 @@ public class HomepageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
+        ListBarang.initList();
 
         initializationVariable();
         initializationEvent();

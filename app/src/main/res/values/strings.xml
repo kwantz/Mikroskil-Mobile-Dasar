@@ -9,4 +9,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="large_text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet pellentesque risus. Phasellus ac velit eu metus pharetra vestibulum a et felis. Pellentesque iaculis est et sem laoreet feugiat. Nullam eget nisi in quam vestibulum faucibus. Vivamus elementum ante a odio tempus, vel sollicitudin libero elementum. Curabitur eu efficitur felis, sit amet feugiat ipsum. Vivamus at finibus massa. Mauris tristique vestibulum sem, non mollis tortor suscipit a.
+    </string>
 </resources>

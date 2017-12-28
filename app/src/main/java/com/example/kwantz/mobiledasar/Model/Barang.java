@@ -9,6 +9,8 @@ public class Barang {
     private String rate;
     private String feed;
     private Boolean seen;
+    private String kategori;
+    private String berat;
 
     public Barang (int icon, String title, String deskripsi, String hargaAsli, String hargaDiskon, String rate, String feed, Boolean seen) {
         this.icon = icon;

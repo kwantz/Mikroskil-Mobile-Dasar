@@ -54,9 +54,37 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
+            android:id="@+id/konten"
+            android:visibility="gone"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:src="@drawable/transaksi"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/not_found"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/penjualan"/>
+
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riwayat Pembelian Kosong"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kamu belum pernah melakukan transaksi pembelian."/>
     </LinearLayout>
 
     <ProgressBar
