@@ -8,4 +8,7 @@
     <color name="white">#fff</color>
     <color name="finish">#87d25f</color>
     <color name="pending">#ccc</color>
+    <color name="grey">#808080</color>
+    <color name="lightGrey">#F0F0F0</color>
+    <color name="black">#000000</color>
 </resources>

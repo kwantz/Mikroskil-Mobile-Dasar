@@ -21,8 +21,10 @@
         <activity
             android:name=".HomepageActivity"
             android:label="@string/title_activity_homepage" />
-        <activity android:name=".SearchActivity"
-            android:windowSoftInputMode="stateVisible"></activity>
+        <activity
+            android:name=".SearchActivity"
+            android:windowSoftInputMode="stateVisible" />
+        <activity android:name=".DeliveryActivity"></activity>
     </application>
 
 </manifest>

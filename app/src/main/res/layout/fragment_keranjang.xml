@@ -20,4 +20,19 @@
             android:layout_height="wrap_content"
             android:text="Keranjang Belanja"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bayar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@color/blPink"
+            android:id="@+id/btn_lanjut"
+            android:layout_gravity="center"/>
+    </LinearLayout>
 </LinearLayout>
