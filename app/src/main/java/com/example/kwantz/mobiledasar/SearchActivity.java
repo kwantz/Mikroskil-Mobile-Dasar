@@ -40,6 +40,13 @@ public class SearchActivity extends AppCompatActivity {
         initializationEvent();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LinearRecycleViewWithSearchAdapter(rvKataKunci);
+        LinearRecycleViewWithBarangAdapter(rvRiwayatBarang);
+    }
+
     private void initializationVariable () {
         cari1 = (TextView) findViewById(R.id.cari1);
         cari2 = (TextView) findViewById(R.id.cari2);
@@ -93,9 +100,6 @@ public class SearchActivity extends AppCompatActivity {
                     inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
                     if (!input.getText().toString().equals("")) {
-                        RiwayatKataKunci.setKataKunci(input.getText().toString());
-                        LinearRecycleViewWithSearchAdapter(rvKataKunci);
-
                         Intent intent = new Intent(view.getContext(), BarangActivity.class);
                         intent.putExtra("Input", input.getText().toString());
                         view.getContext().startActivity(intent);

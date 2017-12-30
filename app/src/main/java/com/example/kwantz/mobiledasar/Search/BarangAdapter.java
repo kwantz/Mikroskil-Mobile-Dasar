@@ -14,6 +14,7 @@ import com.example.kwantz.mobiledasar.DetailActivity;
 import com.example.kwantz.mobiledasar.Model.Barang;
 import com.example.kwantz.mobiledasar.Model.ListBarang;
 import com.example.kwantz.mobiledasar.Model.PembelianBarang;
+import com.example.kwantz.mobiledasar.Model.RiwayatBarang;
 import com.example.kwantz.mobiledasar.Model.RiwayatKataKunci;
 import com.example.kwantz.mobiledasar.R;
 import com.example.kwantz.mobiledasar.Transaksi.Adapter.PembelianAdapter;
@@ -26,7 +27,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
     private ArrayList<Barang> arrayBarang = new ArrayList<>();
 
     public BarangAdapter () {
-        this.arrayBarang = ListBarang.getTigaRiwayatBarangTerakhir();
+        this.arrayBarang = RiwayatBarang.getRiwayatBarang();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

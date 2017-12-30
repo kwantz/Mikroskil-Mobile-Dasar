@@ -103,9 +103,30 @@ public class TagihanFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(this.getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        initListBarang("SEMUA");
+        initListBarang("");
         mAdapter = new TagihanAdapter(this.listBarang);
         mRecyclerView.setAdapter(mAdapter);
+
+        konten.setVisibility(View.GONE);
+        notFound.setVisibility(View.GONE);
+        progressBar.setVisibility(View.VISIBLE);
+
+        final Handler handler = new Handler();
+
+        boolean ok = handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                initListBarang("SEMUA");
+                mAdapter = new TagihanAdapter(listBarang);
+                mRecyclerView.setAdapter(mAdapter);
+
+                progressBar.setVisibility(View.GONE);
+                if(listBarang.size() != 0)
+                    konten.setVisibility(View.VISIBLE);
+                else
+                    notFound.setVisibility(View.VISIBLE);
+            }
+        }, 1000);
     }
 
     private void initializationEvent () {

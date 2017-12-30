@@ -111,9 +111,30 @@ public class PembelianFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(this.getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        initPembelianArray("SEMUA");
+        initPembelianArray("");
         mAdapter = new PembelianAdapter(this.pembelianBarang);
         mRecyclerView.setAdapter(mAdapter);
+
+        konten.setVisibility(View.GONE);
+        notFound.setVisibility(View.GONE);
+        progressBar.setVisibility(View.VISIBLE);
+
+        final Handler handler = new Handler();
+
+        boolean ok = handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                initPembelianArray("SEMUA");
+                mAdapter = new PembelianAdapter(pembelianBarang);
+                mRecyclerView.setAdapter(mAdapter);
+
+                progressBar.setVisibility(View.GONE);
+                if (pembelianBarang.size() != 0)
+                    konten.setVisibility(View.VISIBLE);
+                else
+                    notFound.setVisibility(View.VISIBLE);
+            }
+        }, 1000);
     }
 
     private void initializationEvent () {

@@ -10,10 +10,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.kwantz.mobiledasar.Adapter.BarangAdapter;
 import com.example.kwantz.mobiledasar.Model.Barang;
 import com.example.kwantz.mobiledasar.Model.ListBarang;
+import com.example.kwantz.mobiledasar.Model.RiwayatKataKunci;
 
 import java.util.ArrayList;
 
@@ -21,7 +23,7 @@ public class BarangActivity extends AppCompatActivity {
     private ArrayList<Barang> arrayBarang = new ArrayList<>();
     private RecyclerView grid;
     private ImageView back;
-    private EditText input;
+    private TextView input;
     private ProgressBar progress;
     private LinearLayout notFound;
 
@@ -38,7 +40,7 @@ public class BarangActivity extends AppCompatActivity {
 
     private void initializationVariable () {
         grid = (RecyclerView) findViewById(R.id.grid);
-        input = (EditText) findViewById(R.id.search_input);
+        input = (TextView) findViewById(R.id.search_input);
         back = (ImageView) findViewById(R.id.back_btn);
         progress = (ProgressBar) findViewById(R.id.progress);
         notFound = (LinearLayout) findViewById(R.id.not_found);
@@ -76,5 +78,7 @@ public class BarangActivity extends AppCompatActivity {
     private void getExtraIntent () {
         input.setText(getIntent().getExtras().getString("Input"));
         this.arrayBarang = ListBarang.getBarangWithTitle(input.getText().toString());
+
+        RiwayatKataKunci.setKataKunci(input.getText().toString());
     }
 }

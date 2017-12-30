@@ -46,6 +46,8 @@
             android:src="@drawable/icon6"/>
     </LinearLayout>
     <ScrollView
+        android:overScrollMode="never"
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white">
@@ -147,6 +149,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"/>
                     <Button
+                        android:id="@+id/beli1"
                         android:background="@color/blPink"
                         android:textColor="@color/white"
                         android:textStyle="bold"
@@ -216,6 +219,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"/>
                     <Button
+                        android:id="@+id/beli2"
                         android:background="@color/blPink"
                         android:textColor="@color/white"
                         android:textStyle="bold"

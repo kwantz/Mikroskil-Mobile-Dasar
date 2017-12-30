@@ -20,19 +20,42 @@
             android:layout_height="wrap_content"
             android:text="Keranjang Belanja"/>
     </LinearLayout>
-    <LinearLayout
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:scrollbars="none"/>
+
+    <LinearLayout
+        android:id="@+id/not_found"
+        android:gravity="center"
+        android:visibility="gone"
         android:orientation="vertical"
-        android:padding="8dp">
-        <Button
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bayar"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:background="@color/blPink"
-            android:id="@+id/btn_lanjut"
-            android:layout_gravity="center"/>
+            android:src="@drawable/nobrand"/>
+        <TextView
+            android:textSize="15dp"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum ada barang belanjaan"/>
+        <TextView
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semua barang belanjaan kamu akan terdaftar di sini. Ayo mulai belanja dan rasakan kemudahannya."/>
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_margin="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

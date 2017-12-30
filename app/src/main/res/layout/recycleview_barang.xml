@@ -27,7 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="title"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:ellipsize="end"/>
         <TextView
             android:id="@+id/harga_diskon"
             android:background="@drawable/strikethrough"
@@ -72,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:id="@+id/beli"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Beli"

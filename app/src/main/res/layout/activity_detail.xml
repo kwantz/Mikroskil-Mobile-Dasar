@@ -30,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:maxLines="1"
+                android:ellipsize="end"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:textColor="#fff"
@@ -76,6 +77,7 @@
                 android:textAllCaps="false"
                 android:background="#eee"/>
             <Button
+                android:id="@+id/beli"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"

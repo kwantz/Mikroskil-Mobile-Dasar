@@ -49,6 +49,8 @@
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:overScrollMode="never"
+            android:scrollbars="none"
             android:id="@+id/pembelian_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

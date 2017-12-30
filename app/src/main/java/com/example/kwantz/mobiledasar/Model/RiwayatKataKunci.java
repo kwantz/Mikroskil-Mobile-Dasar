@@ -18,8 +18,15 @@ public class RiwayatKataKunci {
         int size = Math.min(kataKunci.size(), 5);
 
         for(int i = len - 1; i >= len - size; i--) {
-            Log.e("Data", len + " " + size + " " + i + " " + kataKunci.get(i));
-            kataSimpanan.add(kataKunci.get(i));
+            boolean status = true;
+            for(int j = 0; j < kataSimpanan.size(); j++) {
+                if(kataSimpanan.get(j).equals(kataKunci.get(i))) {
+                    status = false;
+                    break;
+                }
+            }
+
+            if (status) kataSimpanan.add(kataKunci.get(i));
         }
 
         return kataSimpanan;

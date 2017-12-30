@@ -19,6 +19,7 @@
         <TextView
             android:id="@+id/title"
             android:textColor="#000"
+            android:ellipsize="end"
             android:maxLines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
