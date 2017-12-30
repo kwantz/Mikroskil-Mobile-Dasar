@@ -16,53 +16,15 @@ import com.example.kwantz.mobiledasar.Model.PembelianBarang;
 import com.example.kwantz.mobiledasar.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PembelianAdapter extends RecyclerView.Adapter<PembelianAdapter.ViewHolder> {
     private ArrayList<PembelianBarang> pembelianBarang = new ArrayList<>();
-    private String status;
 
-    private Boolean isSemuaBarangAtauBarangSelesai(int idBarang) {
-        return (idBarang > 3) && (idBarang % 4 == 0) && (this.status.equals("SEMUA") || this.status.equals("SELESAI"));
-    }
-
-    private Boolean isSemuaBarangAtauBarangDikembalikan(int idBarang) {
-        return (idBarang > 3) && (idBarang % 4 == 1) && (this.status.equals("SEMUA") || this.status.equals("DIKEMBALIKAN"));
-    }
-
-    private Boolean isSemuaBarangAtauBarangSedangDikirim(int idBarang) {
-        return (idBarang > 3) && (idBarang % 4 == 2) && (this.status.equals("SEMUA") || this.status.equals("DIKIRIM"));
-    }
-
-    private Boolean isSemuaBarangAtauBarangSedangDiterima(int idBarang) {
-        return (idBarang > 3) && (idBarang % 4 == 3) && (this.status.equals("SEMUA") || this.status.equals("DITERIMA"));
-    }
-
-
-    public PembelianAdapter (String status) {
-        int step = 1;
-        this.status = status;
-
-        ListBarang lb = new ListBarang();
-
-        for (Barang barang : lb.getListBarang()) {
-            if (isSemuaBarangAtauBarangSedangDikirim(step)) {
-                this.pembelianBarang.add(new PembelianBarang(barang, "DIKIRIM"));
-            }
-            else if (isSemuaBarangAtauBarangSedangDiterima(step)) {
-                this.pembelianBarang.add(new PembelianBarang(barang, "DITERIMA"));
-            }
-            else if (isSemuaBarangAtauBarangSelesai(step)) {
-                this.pembelianBarang.add(new PembelianBarang(barang, "SELESAI"));
-            }
-            else if (isSemuaBarangAtauBarangDikembalikan(step)) {
-                this.pembelianBarang.add(new PembelianBarang(barang, "DIKEMBALIKAN"));
-            }
-
-            step++;
-            if (step == 8) break;
-        }
+    public PembelianAdapter (ArrayList<PembelianBarang> pembelianBarangArrayList) {
+        this.pembelianBarang = pembelianBarangArrayList;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

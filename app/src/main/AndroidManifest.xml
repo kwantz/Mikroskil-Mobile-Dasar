@@ -24,7 +24,12 @@
         <activity
             android:name=".SearchActivity"
             android:windowSoftInputMode="stateVisible" />
+
         <activity android:name=".DeliveryActivity"></activity>
+
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".BarangActivity"></activity>
+
     </application>
 
 </manifest>

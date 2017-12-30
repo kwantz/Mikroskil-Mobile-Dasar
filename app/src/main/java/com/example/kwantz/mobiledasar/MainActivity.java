@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.kwantz.mobiledasar.Model.ListBarang;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

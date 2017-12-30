@@ -653,6 +653,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/barang1"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
@@ -699,6 +700,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/barang2"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
@@ -745,6 +747,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/barang3"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
@@ -791,6 +794,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/barang4"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
@@ -837,6 +841,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/barang5"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
@@ -890,6 +895,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/barang6"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
@@ -898,7 +904,7 @@
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="150dp"
-                            android:src="@drawable/produk7" />
+                            android:src="@drawable/produk6" />
 
                         <TextView
                             android:layout_width="wrap_content"
