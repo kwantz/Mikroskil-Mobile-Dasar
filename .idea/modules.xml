@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MobileDasar.iml" filepath="$PROJECT_DIR$/MobileDasar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobile-dasar.iml" filepath="$PROJECT_DIR$/mobile-dasar.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobile-dasar.iml" filepath="$PROJECT_DIR$/mobile-dasar.iml" />
     </modules>
   </component>
