@@ -541,11 +541,6 @@
                 android:paddingRight="16dp"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/lineGrey"/>
-
-            <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -555,7 +550,10 @@
                 android:paddingTop="4dp"
                 android:text="yang ingin dipakai?"
                 android:textSize="24sp" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lineGrey"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1359,12 +1357,12 @@
                     <EditText
                         android:layout_width="216dp"
                         android:hint="Masukkan Kode"
+                        android:textColor="@color/black"
                         android:layout_height="wrap_content" />
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Gunakan"
-                        android:padding="4dp"
                         android:layout_marginLeft="8dp"
                         android:background="@drawable/border_background"
                         android:textAllCaps="false"/>
@@ -1385,11 +1383,13 @@
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="248dp"
+                        android:textColor="@color/black"
                         android:layout_height="wrap_content"
                         android:text="Total harga barang"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:text="Rp 490.000"/>
                 </LinearLayout>
                 <LinearLayout
@@ -1398,10 +1398,12 @@
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="248dp"
+                        android:textColor="@color/black"
                         android:layout_height="wrap_content"
                         android:text="Biaya Kirim"/>
                     <TextView
                         android:layout_width="wrap_content"
+                        android:textColor="@color/black"
                         android:layout_height="wrap_content"
                         android:text="Rp 206.500"/>
                 </LinearLayout>
@@ -1438,6 +1440,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bayar"
+                    android:id="@+id/btn_bayar"
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:background="@color/blPink"

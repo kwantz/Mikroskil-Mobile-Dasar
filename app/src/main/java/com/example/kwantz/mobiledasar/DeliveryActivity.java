@@ -1,5 +1,6 @@
 package com.example.kwantz.mobiledasar;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.LinkAddress;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.kwantz.mobiledasar.Transaksi.PaymentActivity;
+
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -33,7 +36,7 @@ public class DeliveryActivity extends AppCompatActivity {
             btnKetentuTransfer, ketentuTransfer, btnKetentuIndo, ketentuIndo, infoBca, infoMandiri, infoBri, infoPermata, infoBni,
             bcaVa, mandiriVa, briVa, permataVa, bniVa, voucher;
     private ScrollView pengiriman, pembayaran;
-    private Button lanjutBayar;
+    private Button lanjutBayar, bayar;
     private RadioButton rTransfer,rVa,rIndomaret;
 
     @Override
@@ -51,6 +54,15 @@ public class DeliveryActivity extends AppCompatActivity {
         pengiriman = (ScrollView)findViewById(R.id.pengiriman);
         pembayaran = (ScrollView)findViewById(R.id.pembayaran);
         lanjutBayar = (Button)findViewById(R.id.btn_pembayaran);
+        bayar = (Button)findViewById(R.id.btn_bayar);
+
+        bayar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DeliveryActivity.this, PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
 
         View.OnClickListener bayar = new View.OnClickListener(){
 
@@ -446,5 +458,4 @@ public class DeliveryActivity extends AppCompatActivity {
                 }
         }
     }
-
 }
