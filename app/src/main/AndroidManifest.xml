@@ -27,7 +27,7 @@
         <activity android:name=".DeliveryActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".BarangActivity" />
-        <activity android:name=".Transaksi.PaymentActivity" />
+        <activity android:name=".PaymentActivity" />
         <activity android:name=".DetailTagihanActivity"></activity>
     </application>
 

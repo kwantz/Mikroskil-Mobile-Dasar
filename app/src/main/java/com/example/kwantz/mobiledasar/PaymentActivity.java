@@ -2,10 +2,8 @@ package com.example.kwantz.mobiledasar;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.media.Image;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -39,16 +37,19 @@ public class PaymentActivity extends AppCompatActivity {
                 // custom dialog
                 final Dialog dialog = new Dialog(context);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+                dialog.setContentView(dialog_waspada);
+                dialog.show();
                 final ImageView closeDialog = dialog.findViewById(R.id.close_dialog);
                 closeDialog.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
                         if (dialog != null && dialog.isShowing())
                             dialog.dismiss();
                     }
                 });
-                dialog.setContentView(dialog_waspada);
-                dialog.show();
+
             }
         });
 

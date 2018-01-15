@@ -18,13 +18,6 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.kwantz.mobiledasar.Transaksi.PaymentActivity;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import it.sephiroth.android.library.tooltip.Tooltip;
 
 public class DeliveryActivity extends AppCompatActivity {
