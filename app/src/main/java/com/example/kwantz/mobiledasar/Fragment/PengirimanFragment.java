@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,6 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.kwantz.mobiledasar.Model.Barang;
+import com.example.kwantz.mobiledasar.Model.ListBarang;
 import com.example.kwantz.mobiledasar.R;
 
 import it.sephiroth.android.library.tooltip.Tooltip;
@@ -30,20 +33,25 @@ public class PengirimanFragment extends Fragment {
     LinearLayout tabPembayaran, bgProgress, Pelapak, cttnPelapak;
     ProgressBar barProgress;
     CheckBox checkPelapak;
-    ImageView helpPelapak, helpPengganti;
+    ImageView helpPelapak, helpPengganti, gambar;
     Spinner numSpinner, deliverySpinner;
-    TextView cttn;
+    TextView cttn, namaBarang, hargaBarang;
+    Barang barang;
+    String tempHarga, tempHargaKirim = "Rp28.785";
 
-    public PengirimanFragment() {
-        // Required empty public constructor
-    }
+    public PengirimanFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         this.view = inflater.inflate(R.layout.fragment_pengiriman, container, false);
+
+        int icon = Integer.parseInt(getArguments().getString("icon"));
+        this.barang = ListBarang.getBarangByImage(icon);
+
         initializationVariable();
         initializationEvent();
+
         return view;
     }
 
@@ -60,6 +68,19 @@ public class PengirimanFragment extends Fragment {
         cttn = view.findViewById(R.id.tv_cttnPelapak);
         cttnPelapak = view.findViewById(R.id.cttnPelapak);
         helpPengganti = view.findViewById(R.id.help_pengganti);
+        gambar = view.findViewById(R.id.gambar);
+        namaBarang = view.findViewById(R.id.nama_barang);
+        hargaBarang = view.findViewById(R.id.harga_barang);
+
+        gambar.setImageResource(this.barang.getIcon());
+        namaBarang.setText(this.barang.getTitle());
+        if (this.barang.isHargaNormal()) {
+            this.tempHarga = this.barang.getHargaAsli();
+            hargaBarang.setText(this.barang.getHargaAsli());
+        } else {
+            this.tempHarga = this.barang.getHargaDiskon();
+            hargaBarang.setText(this.barang.getHargaDiskon());
+        }
     }
 
     private void initializationEvent() {
@@ -105,9 +126,28 @@ public class PengirimanFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         numSpinner.setAdapter(adapter);
 
+        numSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) { hargaBarang.setText(getHargaTotalBarang(i + 1)); }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
+
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getActivity(), R.array.delivery_array, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         deliverySpinner.setAdapter(adapter2);
+
+        numSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String[] arrPengiriman = { "Rp28.785", "Rp38.885", "Rp30.000", "Rp40.000", "Rp29.000", "Rp38.000" };
+                tempHargaKirim = arrPengiriman[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
 
         cttn.setOnClickListener(new View.OnClickListener() {
 
@@ -130,7 +170,14 @@ public class PengirimanFragment extends Fragment {
                     public void run() {
                         barProgress.setVisibility(View.GONE);
                         bgProgress.setVisibility(View.GONE);
-                        (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.konten, new PembayaranFragment()).commit();
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("hargaBarang", hargaBarang.getText().toString());
+                        bundle.putString("hargaKirim", tempHargaKirim);
+                        PembayaranFragment pembayaranFragment = new PembayaranFragment();
+                        pembayaranFragment.setArguments(bundle);
+
+                        (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.konten, pembayaranFragment).commit();
                     }
                 }, 1000);
             }
@@ -148,7 +195,14 @@ public class PengirimanFragment extends Fragment {
                     public void run() {
                         barProgress.setVisibility(View.GONE);
                         bgProgress.setVisibility(View.GONE);
-                        (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.konten, new PembayaranFragment()).commit();
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("hargaBarang", hargaBarang.getText().toString());
+                        bundle.putString("hargaKirim", tempHargaKirim);
+                        PembayaranFragment pembayaranFragment = new PembayaranFragment();
+                        pembayaranFragment.setArguments(bundle);
+
+                        (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.konten, pembayaranFragment).commit();
                     }
                 }, 1000);
             }
@@ -163,5 +217,29 @@ public class PengirimanFragment extends Fragment {
                     Pelapak.setVisibility(View.GONE);
             }
         });
+    }
+
+    private String getHargaTotalBarang (int qty) {
+        int n = 0;
+        String hargaAsli = this.tempHarga;
+
+        for(int i = 0; i < hargaAsli.length(); i++) {
+            if (hargaAsli.charAt(i) >= '0' && hargaAsli.charAt(i) <= '9') {
+                n = n * 10 + Character.getNumericValue(hargaAsli.charAt(i));
+            }
+        }
+
+        String total = Integer.toString(n * qty);
+        String hargaTotal = "";
+
+        int temp = 0;
+        for(int i = total.length() - 1; i >= 0; i--) {
+            hargaTotal = total.charAt(i) + hargaTotal;
+            if (temp % 3 == 2) hargaTotal = "." + hargaTotal;
+
+            temp = (temp + 1) % 3;
+        }
+
+        return "Rp" + hargaTotal;
     }
 }

@@ -18,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.kwantz.mobiledasar.Fragment.PengirimanFragment;
+import com.example.kwantz.mobiledasar.Model.Barang;
+import com.example.kwantz.mobiledasar.Model.ListBarang;
 
 import org.w3c.dom.Text;
 
@@ -27,13 +29,17 @@ import java.util.List;
 import it.sephiroth.android.library.tooltip.Tooltip;
 
 public class DeliveryActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.konten, new PengirimanFragment()).commit();
+        Bundle bundle = new Bundle();
+        bundle.putString("icon", getIntent().getExtras().getString("icon"));
+        PengirimanFragment pengirimanFragment = new PengirimanFragment();
+        pengirimanFragment.setArguments(bundle);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.konten, pengirimanFragment).commit();
     }
 
 }

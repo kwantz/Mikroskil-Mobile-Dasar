@@ -99,7 +99,7 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:textColor="@color/black"
-                    android:text="PENGIRIMAN"
+                    android:text="PEMBAYARAN"
                     android:textSize="12sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -155,7 +155,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:onClick="onRadioButtonClicked"
                     android:id="@+id/radio_transfer"
                     android:paddingRight="8dp"/>
                 <TextView
@@ -364,7 +363,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/radio_va"
-                    android:onClick="onRadioButtonClicked"
                     android:paddingRight="8dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -713,7 +711,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/radio_indomaret"
-                    android:onClick="onRadioButtonCLicked"
                     android:paddingRight="8dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -973,12 +970,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
-                        android:layout_width="248dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total harga barang"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/harga_barang"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="right"
                         android:text="Rp 490.000"/>
                 </LinearLayout>
                 <LinearLayout
@@ -986,12 +985,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
-                        android:layout_width="248dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Biaya Kirim"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/harga_kirim"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="right"
                         android:text="Rp 206.500"/>
                 </LinearLayout>
                 <LinearLayout
@@ -1001,16 +1002,18 @@
                     android:paddingTop="16dp"
                     android:paddingBottom="16dp">
                     <TextView
-                        android:layout_width="248dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="Total belanja"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/harga_total"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/blPink"
                         android:textStyle="bold"
+                        android:gravity="right"
                         android:text="Rp 696.500"/>
                 </LinearLayout>
             </LinearLayout>

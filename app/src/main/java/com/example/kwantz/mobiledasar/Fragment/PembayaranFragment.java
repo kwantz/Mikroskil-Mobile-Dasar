@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.example.kwantz.mobiledasar.Model.ListBarang;
 import com.example.kwantz.mobiledasar.R;
 
 public class PembayaranFragment extends Fragment {
@@ -23,8 +24,9 @@ public class PembayaranFragment extends Fragment {
     LinearLayout ketentuTransfer, btnKetentuTransfer, voucher, tabPengiriman, transferOpt, va, indomaret, transfer, vaOpt, indomaretOpt, btnKetentuIndo, ketentuIndo, bcaVa, mandiriVa, briVa, permataVa, bniVa, infoBca, infoMandiri, infoBri, infoPermata, infoBni;
     ImageView panahTransfer, btnBack, panahIndomaret, icBca, icMandiri, icBri, icPermata, icBni;
     RadioButton rTransfer, rVa, rIndomaret;
-    TextView garisBca, garisMandiri, garisBri, garisPermata, garisBni;
+    TextView garisBca, garisMandiri, garisBri, garisPermata, garisBni, tvHargaBarang, tvHargaKirim, tvHargaTotal;
     CheckBox checkVoucher;
+    String hargaBarang, hargaKirim;
 
     public PembayaranFragment() {
         // Required empty public constructor
@@ -34,6 +36,10 @@ public class PembayaranFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         this.view = inflater.inflate(R.layout.fragment_pembayaran, container, false);
+
+        this.hargaBarang = getArguments().getString("hargaBarang");
+        this.hargaKirim = getArguments().getString("hargaKirim");
+
         initializationVariable();
         initializationEvent();
         return this.view;
@@ -82,6 +88,14 @@ public class PembayaranFragment extends Fragment {
         icBni = view.findViewById(R.id.ic_bni);
         checkVoucher = view.findViewById(R.id.check_voucher);
         voucher = view.findViewById(R.id.voucher);
+
+        tvHargaBarang = view.findViewById(R.id.harga_barang);
+        tvHargaKirim = view.findViewById(R.id.harga_kirim);
+        tvHargaTotal = view.findViewById(R.id.harga_total);
+
+        tvHargaBarang.setText(this.hargaBarang);
+        tvHargaKirim.setText(this.hargaKirim);
+        tvHargaTotal.setText(this.getHargaTotalBarang());
     }
 
     private void initializationEvent() {
@@ -327,5 +341,34 @@ public class PembayaranFragment extends Fragment {
             indomaret.setVisibility(View.GONE);
             indomaretOpt.setBackgroundColor(Color.rgb(247,242,242));
         }
+    }
+
+    private String getHargaTotalBarang () {
+        int barang = 0, kirim = 0;
+
+        for(int i = 0; i < this.hargaBarang.length(); i++) {
+            if (this.hargaBarang.charAt(i) >= '0' && this.hargaBarang.charAt(i) <= '9') {
+                barang = barang * 10 + Character.getNumericValue(this.hargaBarang.charAt(i));
+            }
+        }
+
+        for(int i = 0; i < this.hargaKirim.length(); i++) {
+            if (this.hargaKirim.charAt(i) >= '0' && this.hargaKirim.charAt(i) <= '9') {
+                kirim = kirim * 10 + Character.getNumericValue(this.hargaKirim.charAt(i));
+            }
+        }
+
+        String total = Integer.toString(barang + kirim);
+        String hargaTotal = "";
+
+        int temp = 0;
+        for(int i = total.length() - 1; i >= 0; i--) {
+            hargaTotal = total.charAt(i) + hargaTotal;
+            if (temp % 3 == 2) hargaTotal = "." + hargaTotal;
+
+            temp = (temp + 1) % 3;
+        }
+
+        return "Rp" + hargaTotal;
     }
 }
