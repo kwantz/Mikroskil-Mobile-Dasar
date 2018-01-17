@@ -416,7 +416,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/blPink"
                         android:clickable="true"
-                        android:id="@+id/to_pay_detail"
+                        android:id="@+id/tv_detail_tagihan"
                         android:text="BL18116U88PUINV."/>
                 </LinearLayout>
                 <TextView
@@ -433,6 +433,7 @@
                     android:background="@color/blPink"
                     android:textColor="@color/white"
                     android:textAllCaps="false"
+                    android:id="@+id/btn_detail_tagihan"
                     android:text="Lihat tagihan pembayaran"/>
                 <Button
                     android:layout_width="match_parent"

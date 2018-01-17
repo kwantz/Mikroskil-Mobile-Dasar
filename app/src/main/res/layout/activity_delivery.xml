@@ -216,6 +216,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
+                        android:id="@+id/txt_sbgPelapak"
+                        android:clickable="true"
                         android:orientation="vertical">
 
                         <TextView
@@ -482,6 +484,8 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:id="@+id/check_pengganti"
                         android:buttonTint="@color/grey" />
 
                     <TextView
@@ -490,6 +494,8 @@
                         android:layout_marginLeft="8dp"
                         android:text="Ya, carikan saya barang pengganti"
                         android:textColor="@color/black"
+                        android:id="@+id/text_pengganti"
+                        android:clickable="true"
                         android:textSize="14sp" />
 
                     <ImageView
@@ -1116,7 +1122,7 @@
                 android:orientation="horizontal"
                 android:id="@+id/indomaret_opt"
                 android:clickable="true"
-                android:background="@color/lighterGrey"
+                android:background="@color/lightGrey"
                 android:padding="8dp">
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -1344,6 +1350,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:id="@+id/text_voucher"
                         android:text="Ya, saya ingin menggunakan voucher"
                         android:textColor="@color/black"/>
                 </LinearLayout>
@@ -1361,8 +1369,10 @@
                         android:layout_height="wrap_content" />
                     <Button
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="20dp"
                         android:text="Gunakan"
+                        android:gravity="center"
+                        android:textSize="12sp"
                         android:layout_marginLeft="8dp"
                         android:background="@drawable/border_background"
                         android:textAllCaps="false"/>
@@ -1371,7 +1381,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/lighterGrey"/>
+                android:background="@color/lightGrey"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1430,7 +1440,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/lighterGrey"/>
+                android:background="@color/lightGrey"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

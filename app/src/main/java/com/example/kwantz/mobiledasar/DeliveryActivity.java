@@ -23,11 +23,11 @@ import it.sephiroth.android.library.tooltip.Tooltip;
 public class DeliveryActivity extends AppCompatActivity {
     private ImageView back , helpPelapak , helpPengganti, check, panahTransfer, panahIndomaret, icBca, icMandiri, icBri, icPermata, icBni;
     private TextView cttn, textPengiriman, textPembayaran , linePembayaran , garisBca, garisMandiri, garisBri, garisPermata,
-            garisBni;
-    private CheckBox checkPelapak, checkVoucher;
+            garisBni, textVoucher, textPengganti;
+    private CheckBox checkPelapak, checkVoucher, checkPengganti;
     private LinearLayout tabPengiriman, tabPembayaran, Pelapak, cttnPelapak, transfer, transferOpt, va, vaOpt, indomaret , indomaretOpt,
             btnKetentuTransfer, ketentuTransfer, btnKetentuIndo, ketentuIndo, infoBca, infoMandiri, infoBri, infoPermata, infoBni,
-            bcaVa, mandiriVa, briVa, permataVa, bniVa, voucher;
+            bcaVa, mandiriVa, briVa, permataVa, bniVa, voucher, textPelapak;
     private ScrollView pengiriman, pembayaran;
     private Button lanjutBayar, bayar;
     private RadioButton rTransfer,rVa,rIndomaret;
@@ -180,6 +180,41 @@ public class DeliveryActivity extends AppCompatActivity {
                     voucher.setVisibility(View.VISIBLE);
                 else
                     voucher.setVisibility(View.GONE);
+            }
+        });
+
+        checkPengganti = (CheckBox)findViewById(R.id.check_pengganti);
+        textPelapak = (LinearLayout)findViewById(R.id.txt_sbgPelapak);
+        textVoucher = (TextView)findViewById(R.id.text_voucher);
+        textPengganti = (TextView)findViewById(R.id.text_pengganti);
+
+        textPelapak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkPelapak.isChecked()==false)
+                    checkPelapak.setChecked(true);
+                else
+                    checkPelapak.setChecked(false);
+            }
+        });
+
+        textVoucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkVoucher.isChecked()==false)
+                    checkVoucher.setChecked(true);
+                else
+                    checkVoucher.setChecked(false);
+            }
+        });
+
+        textPengganti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkPengganti.isChecked()==false)
+                    checkPengganti.setChecked(true);
+                else
+                    checkPengganti.setChecked(false);
             }
         });
 

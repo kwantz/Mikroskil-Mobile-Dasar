@@ -2,10 +2,12 @@ package com.example.kwantz.mobiledasar;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,8 +17,9 @@ import static com.example.kwantz.mobiledasar.R.layout.dialog_waspada;
 
 public class PaymentActivity extends AppCompatActivity {
     final Context context = this;
-    TextView detail, salinHarga, salinBca, salinMandiri, salinSyariah, salinBni, salinBri;
-    ImageView closeDialog;
+    private TextView detail, salinHarga, salinBca, salinMandiri, salinSyariah, salinBni, salinBri, detailTagihan;
+    private ImageView closeDialog, closeButton;
+    private Button detail_tagihan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,5 +79,24 @@ public class PaymentActivity extends AppCompatActivity {
         salinBni.setOnClickListener(salinRek);
         salinBri.setOnClickListener(salinRek);
 
+        detailTagihan = (TextView)findViewById(R.id.tv_detail_tagihan);
+        detail_tagihan = (Button)findViewById(R.id.btn_detail_tagihan);
+        View.OnClickListener ke_detail = new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PaymentActivity.this, DetailTagihanActivity.class);
+                startActivity(intent);
+            }
+        };
+        detail_tagihan.setOnClickListener(ke_detail);
+        detailTagihan.setOnClickListener(ke_detail);
+
+        closeButton = (ImageView)findViewById(R.id.close_btn);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 }
