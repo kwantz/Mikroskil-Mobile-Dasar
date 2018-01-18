@@ -6,6 +6,7 @@
     tools:context="com.example.kwantz.mobiledasar.Fragment.PengirimanFragment">
 
     <LinearLayout
+        android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -508,7 +509,6 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="8dp"
                             android:clickable="true"
-                            android:onClick="dialogHelpPengganti"
                             android:id="@+id/help_pengganti"
                             app:srcCompat="@drawable/ic_help_black_24dp" />
                     </LinearLayout>

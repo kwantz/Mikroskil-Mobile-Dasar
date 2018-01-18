@@ -1,13 +1,16 @@
 package com.example.kwantz.mobiledasar.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -15,7 +18,9 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.example.kwantz.mobiledasar.Model.Barang;
 import com.example.kwantz.mobiledasar.Model.ListBarang;
+import com.example.kwantz.mobiledasar.PaymentActivity;
 import com.example.kwantz.mobiledasar.R;
 
 public class PembayaranFragment extends Fragment {
@@ -27,6 +32,8 @@ public class PembayaranFragment extends Fragment {
     TextView garisBca, garisMandiri, garisBri, garisPermata, garisBni, tvHargaBarang, tvHargaKirim, tvHargaTotal;
     CheckBox checkVoucher;
     String hargaBarang, hargaKirim;
+    Button bayar;
+    Barang barang;
 
     public PembayaranFragment() {
         // Required empty public constructor
@@ -37,6 +44,7 @@ public class PembayaranFragment extends Fragment {
         // Inflate the layout for this fragment
         this.view = inflater.inflate(R.layout.fragment_pembayaran, container, false);
 
+        this.barang = ListBarang.getBarangByImage(Integer.parseInt(getArguments().getString("icon")));
         this.hargaBarang = getArguments().getString("hargaBarang");
         this.hargaKirim = getArguments().getString("hargaKirim");
 
@@ -92,6 +100,7 @@ public class PembayaranFragment extends Fragment {
         tvHargaBarang = view.findViewById(R.id.harga_barang);
         tvHargaKirim = view.findViewById(R.id.harga_kirim);
         tvHargaTotal = view.findViewById(R.id.harga_total);
+        bayar = view.findViewById(R.id.btn_bayar);
 
         tvHargaBarang.setText(this.hargaBarang);
         tvHargaKirim.setText(this.hargaKirim);
@@ -99,17 +108,41 @@ public class PembayaranFragment extends Fragment {
     }
 
     private void initializationEvent() {
+        bayar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PaymentActivity.class);
+                intent.putExtra("icon", Integer.toString(barang.getIcon()));
+                intent.putExtra("harga", getHargaTotalBarang());
+                startActivity(intent);
+            }
+        });
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.konten, new PengirimanFragment()).commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("icon", Integer.toString(barang.getIcon()));
+                PengirimanFragment pengirimanFragment = new PengirimanFragment();
+                pengirimanFragment.setArguments(bundle);
+                (getActivity()).getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.konten, pengirimanFragment, "PengirimanFragment")
+                        .commit();
             }
         });
 
         tabPengiriman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.konten, new PengirimanFragment()).commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("icon", Integer.toString(barang.getIcon()));
+                PengirimanFragment pengirimanFragment = new PengirimanFragment();
+                pengirimanFragment.setArguments(bundle);
+                (getActivity()).getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.konten, pengirimanFragment, "PengirimanFragment")
+                        .commit();
             }
         });
 

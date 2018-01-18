@@ -10,27 +10,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@color/blPink">
+        android:background="@color/blPink"
+        android:gravity="center">
         <ImageView
+            android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_arrow_back_white_24dp"
             android:clickable="true"
-            android:id="@+id/back_btn"
-            android:paddingRight="8dp"/>
+            android:id="@+id/back_btn"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="Detail Tagihan"
-            android:paddingLeft="16dp"
             android:textSize="18sp"/>
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:background="#fff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -265,9 +265,11 @@
             </LinearLayout>
 
             <TextView
+                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/lineGrey"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -331,7 +333,6 @@
                     android:layout_marginTop="16dp"
                     android:id="@+id/detail_harga"
                     android:visibility="gone"
-                    android:layout_marginBottom="16dp"
                     android:orientation="vertical">
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -416,6 +417,7 @@
                     </RelativeLayout>
                 </LinearLayout>
                 <LinearLayout
+                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -583,6 +585,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="778 887 7708"
                                 android:textColor="@color/black"
+                                android:textStyle="bold"
                                 android:textAlignment="textStart"/>
                             <TextView
                                 android:layout_width="match_parent"
@@ -624,6 +627,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="023 827 2088"
+                                android:textStyle="bold"
                                 android:textColor="@color/black"
                                 android:textAlignment="textStart"/>
                             <TextView
@@ -666,6 +670,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="034 101 000 743 303"
+                                android:textStyle="bold"
                                 android:textColor="@color/black"
                                 android:textAlignment="textStart"/>
                             <TextView
@@ -741,13 +746,6 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:text="Jl. Thamrin no. 82 I, Kel. Sei Rangas I"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ubah"
-                        android:clickable="true"
-                        android:textSize="12sp"
-                        android:textColor="@color/blPink"/>
                 </LinearLayout>
             </LinearLayout>
             <TextView

@@ -116,6 +116,7 @@
         android:layout_height="match_parent"
         android:id="@+id/pembayaran">
         <LinearLayout
+            android:background="#fff"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -172,6 +173,7 @@
                 android:orientation="vertical"
                 android:id="@+id/transfer">
                 <LinearLayout
+                    android:background="#fff"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
@@ -198,6 +200,7 @@
                         android:src="@drawable/bni"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:background="#ffffff"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -1027,6 +1030,7 @@
                 android:padding="16dp"
                 android:orientation="vertical">
                 <Button
+                    android:id="@+id/btn_bayar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bayar"

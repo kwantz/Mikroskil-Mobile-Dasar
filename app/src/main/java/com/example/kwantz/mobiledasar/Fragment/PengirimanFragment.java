@@ -33,7 +33,7 @@ public class PengirimanFragment extends Fragment {
     LinearLayout tabPembayaran, bgProgress, Pelapak, cttnPelapak;
     ProgressBar barProgress;
     CheckBox checkPelapak;
-    ImageView helpPelapak, helpPengganti, gambar;
+    ImageView helpPelapak, helpPengganti, gambar, backBtn;
     Spinner numSpinner, deliverySpinner;
     TextView cttn, namaBarang, hargaBarang;
     Barang barang;
@@ -71,6 +71,7 @@ public class PengirimanFragment extends Fragment {
         gambar = view.findViewById(R.id.gambar);
         namaBarang = view.findViewById(R.id.nama_barang);
         hargaBarang = view.findViewById(R.id.harga_barang);
+        backBtn = view.findViewById(R.id.back_btn);
 
         gambar.setImageResource(this.barang.getIcon());
         namaBarang.setText(this.barang.getTitle());
@@ -86,6 +87,13 @@ public class PengirimanFragment extends Fragment {
     private void initializationEvent() {
         bgProgress.setVisibility(View.GONE);
         barProgress.setVisibility(View.GONE);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().onBackPressed();
+            }
+        });
 
         helpPelapak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,10 +146,11 @@ public class PengirimanFragment extends Fragment {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         deliverySpinner.setAdapter(adapter2);
 
-        numSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        deliverySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String[] arrPengiriman = { "Rp28.785", "Rp38.885", "Rp30.000", "Rp40.000", "Rp29.000", "Rp38.000" };
+                Log.e("Kirim", arrPengiriman[i]);
                 tempHargaKirim = arrPengiriman[i];
             }
 
@@ -174,10 +183,14 @@ public class PengirimanFragment extends Fragment {
                         Bundle bundle = new Bundle();
                         bundle.putString("hargaBarang", hargaBarang.getText().toString());
                         bundle.putString("hargaKirim", tempHargaKirim);
+                        bundle.putString("icon", Integer.toString(barang.getIcon()));
                         PembayaranFragment pembayaranFragment = new PembayaranFragment();
                         pembayaranFragment.setArguments(bundle);
 
-                        (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.konten, pembayaranFragment).commit();
+                        (getActivity()).getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.konten, pembayaranFragment, "PembayaranFragment")
+                                .commit();
                     }
                 }, 1000);
             }
@@ -199,10 +212,14 @@ public class PengirimanFragment extends Fragment {
                         Bundle bundle = new Bundle();
                         bundle.putString("hargaBarang", hargaBarang.getText().toString());
                         bundle.putString("hargaKirim", tempHargaKirim);
+                        bundle.putString("icon", Integer.toString(barang.getIcon()));
                         PembayaranFragment pembayaranFragment = new PembayaranFragment();
                         pembayaranFragment.setArguments(bundle);
 
-                        (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.konten, pembayaranFragment).commit();
+                        (getActivity()).getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.konten, pembayaranFragment, "PembayaranFragment")
+                                .commit();
                     }
                 }, 1000);
             }

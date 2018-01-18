@@ -13,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kwantz.mobiledasar.Model.Barang;
+import com.example.kwantz.mobiledasar.Model.ListBarang;
+
 import static com.example.kwantz.mobiledasar.R.layout.dialog_waspada;
 
 public class DetailTagihanActivity extends AppCompatActivity {
@@ -21,6 +24,7 @@ public class DetailTagihanActivity extends AppCompatActivity {
     private ImageView closeDialog, panah, back;
     private Button salinHarga;
     private LinearLayout detailTotal, detailHarga;
+    private Barang barang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,8 @@ public class DetailTagihanActivity extends AppCompatActivity {
         salinSyariah = (TextView) findViewById(R.id.salin_syariah);
         salinBni = (TextView) findViewById(R.id.salin_bni);
         salinBri = (TextView) findViewById(R.id.salin_bri);
+
+        this.barang = ListBarang.getBarangByImage(Integer.parseInt(getIntent().getExtras().getString("icon")));
 
         back = (ImageView) findViewById(R.id.back_btn);
         back.setOnClickListener(new View.OnClickListener() {

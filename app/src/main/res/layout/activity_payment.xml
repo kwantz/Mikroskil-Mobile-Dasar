@@ -9,9 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:orientation="horizontal">
         <ImageView
+            android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -26,18 +26,13 @@
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_weight="1"
-            android:layout_marginRight="4dp"
-            android:background="@color/blPink"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:layout_weight="1"
             android:background="@color/blPink"/>
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <LinearLayout
+            android:background="#fff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -97,6 +92,7 @@
                     android:text="BATAS WAKTU PEMBAYARAN"
                     android:textSize="12sp"/>
                 <TextView
+                    android:id="@+id/waktu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -397,6 +393,7 @@
                     </LinearLayout>
                 </LinearLayout>
                 <TextView
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -422,7 +419,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="10dp"
                     android:textColor="@color/black"
                     android:text="Bukalapak akan melakukan verifikasi otomatis \npaling lama 30 menit setelah kamu melakukan\npembayaran."/>
                 <Button

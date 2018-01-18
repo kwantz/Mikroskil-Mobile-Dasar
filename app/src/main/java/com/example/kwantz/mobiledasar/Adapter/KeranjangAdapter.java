@@ -94,6 +94,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.View
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), DeliveryActivity.class);
+                intent.putExtra("icon", Integer.toString(barang.getIcon()));
                 view.getContext().startActivity(intent);
             }
         });
