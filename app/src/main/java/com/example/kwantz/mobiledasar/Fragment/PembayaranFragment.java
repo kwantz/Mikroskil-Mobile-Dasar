@@ -31,9 +31,10 @@ public class PembayaranFragment extends Fragment {
     RadioButton rTransfer, rVa, rIndomaret;
     TextView garisBca, garisMandiri, garisBri, garisPermata, garisBni, tvHargaBarang, tvHargaKirim, tvHargaTotal;
     CheckBox checkVoucher;
-    String hargaBarang, hargaKirim;
+    String hargaBarang, hargaKirim, jenisPembayaran = "transfer";
     Button bayar;
     Barang barang;
+
 
     public PembayaranFragment() {
         // Required empty public constructor
@@ -114,6 +115,7 @@ public class PembayaranFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), PaymentActivity.class);
                 intent.putExtra("icon", Integer.toString(barang.getIcon()));
                 intent.putExtra("harga", getHargaTotalBarang());
+                intent.putExtra("jenisBayar", jenisPembayaran);
                 startActivity(intent);
             }
         });
@@ -342,6 +344,7 @@ public class PembayaranFragment extends Fragment {
 
     private void setTransfer (String radio) {
         if (radio.equals("transfer")) {
+            this.jenisPembayaran = "transfer";
             rTransfer.setChecked(true);
             transfer.setVisibility(View.VISIBLE);
             transferOpt.setBackgroundColor(Color.WHITE);
@@ -354,6 +357,7 @@ public class PembayaranFragment extends Fragment {
 
     private void setVA (String radio) {
         if (radio.equals("va")) {
+            this.jenisPembayaran = "va";
             rVa.setChecked(true);
             va.setVisibility(View.VISIBLE);
             vaOpt.setBackgroundColor(Color.WHITE);
@@ -366,6 +370,7 @@ public class PembayaranFragment extends Fragment {
 
     private void setIndomaret (String radio) {
         if (radio.equals("indomaret")) {
+            this.jenisPembayaran = "indomaret";
             rIndomaret.setChecked(true);
             indomaret.setVisibility(View.VISIBLE);
             indomaretOpt.setBackgroundColor(Color.WHITE);

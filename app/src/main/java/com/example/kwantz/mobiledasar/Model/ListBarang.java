@@ -18,6 +18,9 @@ public class ListBarang {
         listBarang.add(new Barang(R.drawable.produk6, "Celana Jeans Fashion Wanita HIGHWAIST Sobek code 9840", "testing", "Rp140.000", "", "4", "1", false));
         listBarang.add(new Barang(R.drawable.produk7, "OTG Sandisk Ultra Dual Drive M 3.0 16gb Usb 3.0", "testing", "Rp100.500", "", "4.5", "73", false));
         listBarang.add(new Barang(R.drawable.produk6, "Celana Jeans Fashion Wanita HIGHWAIST Sobek code 9840", "testing", "Rp140.000", "", "4", "1", false));
+        listBarang.add(new Barang(R.drawable.produk11, "Laptop Asus x200m Mulus like new", "", "Rp2.400.000", "", "4", "1", false));
+        listBarang.add(new Barang(R.drawable.produk12, "Laptop Asus X441UV Core I3 6006 Colour Windows 10 original garansi resmi 1TAHUN", "", "Rp7.914.200", "", "4", "1", false ));
+        listBarang.add(new Barang(R.drawable.produk13, "Laptop Lenovo Ideapad s300s mulus fullset", "", "Rp2.300.000", "", "4", "1", false));
     }
 
     static public void setRiwayatBarang (int img) {

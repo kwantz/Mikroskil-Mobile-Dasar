@@ -116,6 +116,7 @@ public class BeliDialog {
                 Intent intent = new Intent(view.getContext(), DeliveryActivity.class);
                 intent.putExtra("icon", Integer.toString(barang.getIcon()));
                 view.getContext().startActivity(intent);
+                alert.cancel();
             }
         });
 

@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-<<<<<<< HEAD
 import com.example.kwantz.mobiledasar.Model.Barang;
 import com.example.kwantz.mobiledasar.Model.ListBarang;
 
@@ -25,28 +24,21 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-=======
->>>>>>> 0afd228037eed396057b21516e02ed5eca850bed
+import java.util.Random;
 
 import static com.example.kwantz.mobiledasar.R.layout.dialog_waspada;
 
 
 public class PaymentActivity extends AppCompatActivity {
     final Context context = this;
-<<<<<<< HEAD
-    private TextView waktu, detail, salinHarga, salinBca, salinMandiri, salinSyariah, salinBni, salinBri, detailTagihan;
-    private ImageView closeDialog, closeButton;
-    private Button detail_tagihan;
-    private Barang barang;
-    private String harga;
-=======
-    private TextView detail, salinHarga, salinBca, salinMandiri, salinSyariah, salinBni, salinBri, detailTagihan,
-    judulAtm, judulInternet, judulMobile, salinVa;
+
+    private TextView tvHarga, waktu, detail, salinHarga, salinBca, salinMandiri, salinSyariah, salinBni, salinBri, detailTagihan, judulAtm, judulInternet, judulMobile, salinVa;
     private ImageView closeDialog, closeButton, panahAtm, panahInternet, panahMobile;
     private Button detail_tagihan;
-    private LinearLayout vaAtm, vaInternet, vaMobile, textVaAtm, textVaInternet, textVaMobile;
->>>>>>> 0afd228037eed396057b21516e02ed5eca850bed
-
+    private LinearLayout vaTransfer, indomaretLayout, transferLayout, vaLayout, vaAtm, vaInternet, vaMobile, textVaAtm, textVaInternet, textVaMobile;
+    private Barang barang;
+    private String harga, jenisBayar;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,11 +52,33 @@ public class PaymentActivity extends AppCompatActivity {
         salinBni = (TextView) findViewById(R.id.salin_bni);
         salinBri = (TextView) findViewById(R.id.salin_bri);
         waktu = (TextView) findViewById(R.id.waktu);
+        tvHarga = (TextView) findViewById(R.id.harga);
+        transferLayout = (LinearLayout) findViewById(R.id.transfer_layout);
+        vaLayout = (LinearLayout) findViewById(R.id.va_layout);
+        indomaretLayout = (LinearLayout) findViewById(R.id.indomaret_layout);
+        vaTransfer = (LinearLayout) findViewById(R.id.va_transfer);
 
         waktu.setText(getBatasWaktuPembayaran());
 
         this.barang = ListBarang.getBarangByImage(Integer.parseInt(getIntent().getExtras().getString("icon")));
         this.harga = getIntent().getExtras().getString("harga");
+        this.jenisBayar = getIntent().getExtras().getString("jenisBayar");
+
+        tvHarga.setText(this.getHargaTotalBarang());
+
+        transferLayout.setVisibility(View.GONE);
+        vaLayout.setVisibility(View.GONE);
+        indomaretLayout.setVisibility(View.GONE);
+        vaTransfer.setVisibility(View.GONE);
+        if (this.jenisBayar.equals("transfer")) {
+            transferLayout.setVisibility(View.VISIBLE);
+            vaTransfer.setVisibility(View.VISIBLE);
+        } else if (this.jenisBayar.equals("va")) {
+            vaLayout.setVisibility(View.VISIBLE);
+            vaTransfer.setVisibility(View.VISIBLE);
+        } else if (this.jenisBayar.equals("indomaret")) {
+            indomaretLayout.setVisibility(View.VISIBLE);
+        }
 
         detail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +106,7 @@ public class PaymentActivity extends AppCompatActivity {
             @Override
             public void onClick (View view) {
                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clipData = ClipData.newPlainText("nominal", "Seratus Ribu");
+                ClipData clipData = ClipData.newPlainText("nominal", tvHarga.getText().toString());
                 clipboardManager.setPrimaryClip(clipData);
 
                 Toast toast = Toast.makeText(PaymentActivity.this, "Berhasil salin nominal pembayaran", Toast.LENGTH_SHORT);
@@ -100,25 +114,74 @@ public class PaymentActivity extends AppCompatActivity {
             }
         });
 
-        View.OnClickListener salinRek = new View.OnClickListener(){
-
+        salinBca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("bca", "731 025 2527");
+                clipboardManager.setPrimaryClip(clipData);
+
                 Toast toast = Toast.makeText(PaymentActivity.this, "Berhasil salin no rekening bank", Toast.LENGTH_SHORT);
                 toast.show();
             }
-        };
+        });
 
-        salinBca.setOnClickListener(salinRek);
-        salinMandiri.setOnClickListener(salinRek);
-        salinSyariah.setOnClickListener(salinRek);
-        salinBni.setOnClickListener(salinRek);
-        salinBri.setOnClickListener(salinRek);
+        salinMandiri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("mandiri", "0700 000 899 992");
+                clipboardManager.setPrimaryClip(clipData);
+
+                Toast toast = Toast.makeText(PaymentActivity.this, "Berhasil salin no rekening bank", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        salinSyariah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("syariah", "778 887 7708");
+                clipboardManager.setPrimaryClip(clipData);
+
+                Toast toast = Toast.makeText(PaymentActivity.this, "Berhasil salin no rekening bank", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        salinBni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("bni", "023 827 2088");
+                clipboardManager.setPrimaryClip(clipData);
+
+                Toast toast = Toast.makeText(PaymentActivity.this, "Berhasil salin no rekening bank", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        salinBri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("bni", "034 101 000 743 303");
+                clipboardManager.setPrimaryClip(clipData);
+
+                Toast toast = Toast.makeText(PaymentActivity.this, "Berhasil salin no rekening bank", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
 
         salinVa = (TextView)findViewById(R.id.salin_va);
         salinVa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("va", "80008171020102383");
+                clipboardManager.setPrimaryClip(clipData);
+
                 Toast toast = Toast.makeText(PaymentActivity.this, "Nomor Virtual Account berhasil disalin", Toast.LENGTH_SHORT);
                 toast.show();
             }
@@ -131,6 +194,9 @@ public class PaymentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(PaymentActivity.this, DetailTagihanActivity.class);
                 intent.putExtra("icon", Integer.toString(barang.getIcon()));
+                intent.putExtra("jenisBayar", jenisBayar);
+                intent.putExtra("waktu", waktu.getText().toString());
+                intent.putExtra("harga", getHargaTotalBarang());
                 startActivity(intent);
             }
         };
@@ -204,9 +270,33 @@ public class PaymentActivity extends AppCompatActivity {
         });
     }
 
+    private String getHargaTotalBarang () {
+        int barang = 0;
+        int rand = (new Random()).nextInt(999 ) + 1;
+
+        for(int i = 0; i < this.harga.length(); i++) {
+            if (this.harga.charAt(i) >= '0' && this.harga.charAt(i) <= '9') {
+                barang = barang * 10 + Character.getNumericValue(this.harga.charAt(i));
+            }
+        }
+
+        String total = Integer.toString(barang + rand);
+        String hargaTotal = "";
+
+        int temp = 0;
+        for(int i = total.length() - 1; i >= 0; i--) {
+            hargaTotal = total.charAt(i) + hargaTotal;
+            if (temp % 3 == 2) hargaTotal = "." + hargaTotal;
+
+            temp = (temp + 1) % 3;
+        }
+
+        return "Rp" + hargaTotal;
+    }
+
     private String getBatasWaktuPembayaran()
     {
-        String[] weeks = { "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu" };
+        String[] weeks = { "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu" };
         String[] months = { "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nov", "Des" };
 
         GregorianCalendar waktuSekarang = new GregorianCalendar();
@@ -216,7 +306,7 @@ public class PaymentActivity extends AppCompatActivity {
         String hari = Integer.toString(waktuSekarang.get(Calendar.DATE));
         String bulan = months[waktuSekarang.get(Calendar.MONTH)];
         String tahun = Integer.toString(waktuSekarang.get(Calendar.YEAR));
-        String jam = Integer.toString(waktuSekarang.get(Calendar.HOUR));
+        String jam = Integer.toString(waktuSekarang.get(Calendar.HOUR_OF_DAY));
         String menit = Integer.toString(waktuSekarang.get(Calendar.MINUTE));
 
         if (hari.length() == 1) hari = "0" + hari;
